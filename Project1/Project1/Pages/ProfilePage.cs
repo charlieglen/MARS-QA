@@ -3,34 +3,55 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
+using System.Reflection.PortableExecutable;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.DevTools.V109.Database;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 
 namespace Project1.Pages
 {
     public class ProfilePage
 
     {
-
+        
         public void Description(IWebDriver driver)
         {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/div/div/div/h3/span/i")));
+            
             IWebElement addDescriptionButton = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/div/div/div/h3/span/i"));
             addDescriptionButton.Click();
 
             IWebElement descriptionTextArea = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/div/div/form/div/div/div[2]/div[1]/textarea"));
             descriptionTextArea.Clear();
-            descriptionTextArea.SendKeys("This is my description");
+            descriptionTextArea.SendKeys("I am a Test Analyst.");
 
             IWebElement saveDescription = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/div/div/form/div/div/div[2]/button"));
             saveDescription.Click();
-
         }
+        //public string GetDescription(IWebDriver driver)
+        //{
+        //    //IWebElement createdDescription = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/div/div/form/div/div/div[2]/div[1]/textarea"));
+        //    //return createdDescription.Text;
+
+        //    //IAlert alert = driver.SwitchTo().Alert();
+        //    //return alert.Text;
+
+        //    //IWebElement confirmationAlert = driver.SwitchTo().ActiveElement();
+        //    //return confirmationAlert.Text;
+
+        //}
         public void Languages(IWebDriver driver)
         {
-            Thread.Sleep(1000);
+            //WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/thead/tr/th[3]/div")));
+
             IWebElement addNewLanguageButton = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/thead/tr/th[3]/div"));
             addNewLanguageButton.Click();
 
@@ -47,8 +68,21 @@ namespace Project1.Pages
             addLanguangeButton.Click();
 
         }
+        public string GetLanguages(IWebDriver driver)
+        {
+            //IWebElement confirmationAlert = driver.SwitchTo().ActiveElement();
+            //return confirmationAlert.Text;
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
+
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.CssSelector("[class=\"ns-box ns-growl ns-effect-jelly ns-type-success ns-show\"]")));
+
+            IWebElement confirmationAlert = driver.FindElement(By.CssSelector("[class=\"ns-box ns-growl ns-effect-jelly ns-type-success ns-show\"]"));
+            return confirmationAlert.Text;
+            
+        }
         public void Skills(IWebDriver driver)
         {
+            
             IWebElement skillTab = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[2]"));
             skillTab.Click();
 
@@ -56,7 +90,7 @@ namespace Project1.Pages
             addNewSkill.Click();
 
             IWebElement addSkillTextbox = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/div/div[1]/input"));
-            addSkillTextbox.SendKeys("New skill");
+            addSkillTextbox.SendKeys("Specflow");
 
             IWebElement skillLevelDropdown = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/div/div[2]/select"));
             skillLevelDropdown.Click();
@@ -71,6 +105,8 @@ namespace Project1.Pages
         }
         public void Education(IWebDriver driver)
         {
+            
+
             IWebElement educationTab = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[3]"));
             educationTab.Click();
 
@@ -95,7 +131,6 @@ namespace Project1.Pages
             IWebElement degreeTextbox = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[2]/input"));
             degreeTextbox.SendKeys("Computer Engineering");
 
-            Thread.Sleep(1000);
             IWebElement yearGraduatedDropdown = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[3]/select"));
             yearGraduatedDropdown.Click();
 
@@ -108,6 +143,8 @@ namespace Project1.Pages
         }
         public void Certifications(IWebDriver driver)
         {
+            
+
             IWebElement CertificationsTab = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[4]"));
             CertificationsTab.Click();
 
@@ -115,10 +152,10 @@ namespace Project1.Pages
             addNewCert.Click();
 
             IWebElement certAwardTextbox = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/div/div[1]/div/input"));
-            certAwardTextbox.SendKeys("Certificate of Attendance");
+            certAwardTextbox.SendKeys("CCNA");
 
             IWebElement certifiedFromTextbox = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/div/div[2]/div[1]/input"));
-            certifiedFromTextbox.SendKeys("Adobe");
+            certifiedFromTextbox.SendKeys("Cisco");
 
             IWebElement certYearDropdown = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/div/div[2]/div[2]/select"));
             certYearDropdown.Click();

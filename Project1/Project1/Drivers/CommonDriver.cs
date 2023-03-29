@@ -14,22 +14,22 @@ namespace Project1.Drivers
 
         public IWebDriver driver;
 
-        [SetUp]
-        public void LoginSteps()
-        {
-            driver = new ChromeDriver();
+        //[SetUp]
+        //public void LoginSteps()
+        //{
+        //    driver = new ChromeDriver();
 
-            // Log in page object initializationa dn definiation
-            //LoginPage loginPageObj = new LoginPage();
-            //loginPageObj.LoginActions(driver);
+        //    // Log in page object initializationa dn definiation
+        //    //LoginPage loginPageObj = new LoginPage();
+        //    //loginPageObj.LoginActions(driver);
 
-        }
+        //}
 
-        [TearDown]
-        public void CloseTestRun()
-        {
-            //driver.Quit();
+        //[TearDown]
+        //public void CloseTestRun()
+        //{
+        //    //driver.Quit();
 
-        }
+        //}
     }
 }

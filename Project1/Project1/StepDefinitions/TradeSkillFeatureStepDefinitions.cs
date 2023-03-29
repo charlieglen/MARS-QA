@@ -4,11 +4,12 @@ using Project1.Drivers;
 using Project1.Pages;
 using System;
 using TechTalk.SpecFlow;
+using NUnit.Framework;
 
 namespace Project1.StepDefinitions
 {
     [Binding]
-    public class TradeSkillFeatureStepDefinitions : CommonDriver
+    public class TradeSkillFeatureStepDefinitions
     {
         IWebDriver driver = new ChromeDriver();
 
@@ -29,7 +30,11 @@ namespace Project1.StepDefinitions
         [Then(@"New language should be added on my profile successfully")]
         public void ThenNewLanguageShouldBeAddedOnMyProfileSuccessfully()
         {
-            
+            ProfilePage profilePageObj = new ProfilePage();
+            string newLanguage = profilePageObj.GetLanguages(driver);
+
+            Assert.That(newLanguage == "Filipino has been added to your languages", "Failed to add Language");
+
         }
 
         [When(@"I add a Description")]
@@ -42,7 +47,10 @@ namespace Project1.StepDefinitions
         [Then(@"New Description should be added on my profile successfully")]
         public void ThenNewDescriptionShouldBeAddedOnMyProfileSuccessfully()
         {
-          
+            //ProfilePage profilePageObj = new ProfilePage();
+            //string newDescription = profilePageObj.GetDescription(driver);
+
+            //Assert.That(newDescription == "Description has been saved successfully", "Failed to add Description");
         }
         [When(@"I add a skill")]
         public void WhenIAddASkill()
