@@ -48,7 +48,7 @@ namespace Project1.Pages
         //}
         public void Languages(IWebDriver driver)
         {
-            //WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
+            
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/thead/tr/th[3]/div")));
 
@@ -70,10 +70,8 @@ namespace Project1.Pages
         }
         public string GetLanguages(IWebDriver driver)
         {
-            //IWebElement confirmationAlert = driver.SwitchTo().ActiveElement();
-            //return confirmationAlert.Text;
+            
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
-
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.CssSelector("[class=\"ns-box ns-growl ns-effect-jelly ns-type-success ns-show\"]")));
 
             IWebElement confirmationAlert = driver.FindElement(By.CssSelector("[class=\"ns-box ns-growl ns-effect-jelly ns-type-success ns-show\"]"));
