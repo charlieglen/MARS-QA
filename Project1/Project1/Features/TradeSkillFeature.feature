@@ -3,18 +3,25 @@
 As a seller, I would like to sign up and create my profile
 So that the customer can view my skills and details
 
+Background: 
+	Given I launch and log into Trade skill portal
 
+Scenario: 01) Add language on my profile
+	Given I add a new language
+	Then The new language should be added successfully
 
-Scenario: Create profile details with valid credentials
-	Given I logged into the Trade your skill website
-	When I add a new Language
-	Then New language should be added on my profile successfully
-	When I add a Description
-	Then New Description should be added on my profile successfully
-	When I add a skill
-	Then New Skills shold be added on my profile successfully
-	When I add Education details
-	Then New Education details should be added on my profile successfully
-	When I add Certifications details
-	Then New Certification details should be added on my profile successfully
-	
+Scenario: 02) Add skills on my profile
+	Given I add a new skill
+	Then The new skill should be added successfully
+
+Scenario: 03) Add education details on my profile
+	Given I add a new education details
+	Then The new education details should be added successfully
+
+Scenario: 04) Add certification details on my profile
+	Given I add a new certification details
+	Then The new certification details should be added successfully
+
+Scenario: 05) Add description on my profile
+	Given I add a new description
+	Then The new dedscription should be added successfully

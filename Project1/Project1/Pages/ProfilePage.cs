@@ -21,8 +21,8 @@ namespace Project1.Pages
         
         public void Description(IWebDriver driver)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/div/div/div/h3/span/i")));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
+            wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/div/div/div/h3/span/i")));
             
             IWebElement addDescriptionButton = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/div/div/div/h3/span/i"));
             addDescriptionButton.Click();
@@ -34,6 +34,14 @@ namespace Project1.Pages
             IWebElement saveDescription = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/div/div/form/div/div/div[2]/button"));
             saveDescription.Click();
         }
+
+        //public void WaitForElementXPath(IWebDriver driver, string xpath, int time = 2)
+        //{
+        //    WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(time));
+        //    wait.Until(ExpectedConditions.ElementExists(By.XPath(xpath)));
+
+        //}
+
         //public string GetDescription(IWebDriver driver)
         //{
         //    //IWebElement createdDescription = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/div/div/form/div/div/div[2]/div[1]/textarea"));
@@ -49,7 +57,7 @@ namespace Project1.Pages
         public void Languages(IWebDriver driver)
         {
             
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/thead/tr/th[3]/div")));
 
             IWebElement addNewLanguageButton = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/thead/tr/th[3]/div"));
@@ -68,18 +76,11 @@ namespace Project1.Pages
             addLanguangeButton.Click();
 
         }
-        public string GetLanguages(IWebDriver driver)
-        {
-            
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.CssSelector("[class=\"ns-box ns-growl ns-effect-jelly ns-type-success ns-show\"]")));
-
-            IWebElement confirmationAlert = driver.FindElement(By.CssSelector("[class=\"ns-box ns-growl ns-effect-jelly ns-type-success ns-show\"]"));
-            return confirmationAlert.Text;
-            
-        }
+       
         public void Skills(IWebDriver driver)
         {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[2]")));
             
             IWebElement skillTab = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[2]"));
             skillTab.Click();
@@ -103,7 +104,8 @@ namespace Project1.Pages
         }
         public void Education(IWebDriver driver)
         {
-            
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[3]")));
 
             IWebElement educationTab = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[3]"));
             educationTab.Click();
@@ -141,7 +143,8 @@ namespace Project1.Pages
         }
         public void Certifications(IWebDriver driver)
         {
-            
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[4]")));
 
             IWebElement CertificationsTab = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[4]"));
             CertificationsTab.Click();
@@ -163,7 +166,18 @@ namespace Project1.Pages
 
             IWebElement addCertification = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/div/div[3]/input[1]"));
             addCertification.Click();
+        }
+        public string alertWindow(IWebDriver driver)
+        {
+
+             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+             wait.Until(ExpectedConditions.ElementExists(By.CssSelector("[class=\"ns-box ns-growl ns-effect-jelly ns-type-success ns-show\"]")));
+
+             IWebElement confirmationAlert = driver.FindElement(By.CssSelector("[class=\"ns-box ns-growl ns-effect-jelly ns-type-success ns-show\"]"));
+             return confirmationAlert.Text;
 
         }
+
+        
     }
 }
