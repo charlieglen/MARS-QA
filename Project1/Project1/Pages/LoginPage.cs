@@ -18,13 +18,13 @@ namespace Project1.Pages
             IWebElement signinButton = driver.FindElement(By.XPath("//*[@id=\"home\"]/div/div/div[1]/div/a"));
             signinButton.Click();
 
-            IWebElement emailTextbox = driver.FindElement(By.XPath("/html/body/div[2]/div/div/div[1]/div/div[1]/input"));
+            IWebElement emailTextbox = driver.FindElement(By.Name("email"));
             emailTextbox.SendKeys("charlie.penaredondo@gmail.com");
 
-            IWebElement passwordTextbox = driver.FindElement(By.XPath("/html/body/div[2]/div/div/div[1]/div/div[2]/input"));
+            IWebElement passwordTextbox = driver.FindElement(By.Name("password"));
             passwordTextbox.SendKeys("password123");
 
-            IWebElement rememberMeCheckbox = driver.FindElement(By.XPath("/html/body/div[2]/div/div/div[1]/div/div[3]/div/input"));
+            IWebElement rememberMeCheckbox = driver.FindElement(By.Name("rememberDetails"));
             rememberMeCheckbox.Click();
 
             IWebElement loginButton = driver.FindElement(By.XPath("/html/body/div[2]/div/div/div[1]/div/div[4]/button"));

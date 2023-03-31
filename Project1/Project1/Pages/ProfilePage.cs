@@ -27,8 +27,7 @@ namespace Project1.Pages
             IWebElement addDescriptionButton = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/div/div/div/h3/span/i"));
             addDescriptionButton.Click();
 
-            IWebElement descriptionTextArea = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/div/div/form/div/div/div[2]/div[1]/textarea"));
-            descriptionTextArea.Clear();
+            IWebElement descriptionTextArea = driver.FindElement(By.Name("value"));
             descriptionTextArea.SendKeys("I am a Test Analyst.");
 
             IWebElement saveDescription = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/div/div/form/div/div/div[2]/button"));
@@ -50,10 +49,10 @@ namespace Project1.Pages
             IWebElement addNewLanguageButton = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/thead/tr/th[3]/div"));
             addNewLanguageButton.Click();
 
-            IWebElement addLanguageTextbox = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[1]/input"));
+            IWebElement addLanguageTextbox = driver.FindElement(By.Name("name"));
             addLanguageTextbox.SendKeys("Filipino");
 
-            IWebElement languageLevelDropdown = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[2]/select"));
+            IWebElement languageLevelDropdown = driver.FindElement(By.Name("level"));
             languageLevelDropdown.Click();
 
             IWebElement languageLevel = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[2]/select/option[4]"));
@@ -75,10 +74,10 @@ namespace Project1.Pages
             IWebElement addNewSkill = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/thead/tr/th[3]/div"));
             addNewSkill.Click();
 
-            IWebElement addSkillTextbox = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/div/div[1]/input"));
+            IWebElement addSkillTextbox = driver.FindElement(By.Name("name"));
             addSkillTextbox.SendKeys("Specflow");
 
-            IWebElement skillLevelDropdown = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/div/div[2]/select"));
+            IWebElement skillLevelDropdown = driver.FindElement(By.Name("level"));
             skillLevelDropdown.Click();
 
             IWebElement skillLevel = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/div/div[2]/select/option[3]"));
@@ -100,25 +99,25 @@ namespace Project1.Pages
             IWebElement addNewEducation = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/thead/tr/th[6]/div"));
             addNewEducation.Click();
 
-            IWebElement instituteTextbox = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[1]/div[1]/input"));
+            IWebElement instituteTextbox = driver.FindElement(By.Name("instituteName"));
             instituteTextbox.SendKeys("USM");
 
-            IWebElement instituteCountryDropdown = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[1]/div[2]/select"));
+            IWebElement instituteCountryDropdown = driver.FindElement(By.Name("country"));
             instituteCountryDropdown.Click();
 
             IWebElement instituteCountry = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[1]/div[2]/select/option[113]"));
             instituteCountry.Click();
 
-            IWebElement titleDropdown = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[1]/select"));
+            IWebElement titleDropdown = driver.FindElement(By.Name("title"));
             titleDropdown.Click();
 
             IWebElement title = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[1]/select/option[6]"));
             title.Click();
 
-            IWebElement degreeTextbox = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[2]/input"));
+            IWebElement degreeTextbox = driver.FindElement(By.Name("degree"));
             degreeTextbox.SendKeys("Computer Engineering");
 
-            IWebElement yearGraduatedDropdown = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[3]/select"));
+            IWebElement yearGraduatedDropdown = driver.FindElement(By.Name("yearOfGraduation"));
             yearGraduatedDropdown.Click();
 
             IWebElement yearGraduated = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[2]/div[3]/select/option[15]"));
@@ -139,13 +138,13 @@ namespace Project1.Pages
             IWebElement addNewCert = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/table/thead/tr/th[4]/div"));
             addNewCert.Click();
 
-            IWebElement certAwardTextbox = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/div/div[1]/div/input"));
+            IWebElement certAwardTextbox = driver.FindElement(By.Name("certificationName"));
             certAwardTextbox.SendKeys("CCNA");
 
-            IWebElement certifiedFromTextbox = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/div/div[2]/div[1]/input"));
+            IWebElement certifiedFromTextbox = driver.FindElement(By.Name("certificationFrom"));
             certifiedFromTextbox.SendKeys("Cisco");
 
-            IWebElement certYearDropdown = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/div/div[2]/div[2]/select"));
+            IWebElement certYearDropdown = driver.FindElement(By.Name("certificationYear"));
             certYearDropdown.Click();
 
             IWebElement certYear = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/div/div[2]/div[2]/select/option[7]"));

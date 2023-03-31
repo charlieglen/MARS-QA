@@ -9,19 +9,19 @@ using NUnit.Framework;
 namespace Project1.StepDefinitions
 {
     [Binding]
-    public class TradeSkillFeatureStepDefinitions
+    public class ProfileFeatureStepDefinitions
     {
         IWebDriver driver = new ChromeDriver();
         LoginPage loginPageObj = new LoginPage();
         ProfilePage profilePageObj = new ProfilePage();
 
-        [Given(@"I launch and log into Trade skill portal")]
+        [Given(@"I launch and log into MarsQA portal")]
         public void GivenILaunchAndLogIntoTradeSkillPortal()
         {
             loginPageObj.LogInActions(driver);
         }
 
-        [Given(@"I add a new language")]
+        [When(@"I add a new language")]
         public void GivenIAddANewLanguage()
         {
             profilePageObj.Languages(driver);
@@ -34,7 +34,7 @@ namespace Project1.StepDefinitions
             Assert.That(newLanguage == "Filipino has been added to your languages", "Failed to add Language");
         }
 
-        [Given(@"I add a new skill")]
+        [When(@"I add a new skill")]
         public void GivenIAddANewSkill()
         {
             profilePageObj.Skills(driver);
@@ -47,7 +47,7 @@ namespace Project1.StepDefinitions
             Assert.That(newSkill == "Specflow has been added to your skills", "Failed to add skills");
         }
 
-        [Given(@"I add a new education details")]
+        [When(@"I add a new education details")]
         public void GivenIAddANewEducationDetails()
         {
             profilePageObj.Education(driver);
@@ -60,7 +60,7 @@ namespace Project1.StepDefinitions
             Assert.That(newEducation == "Education has been added", "Failed to add education details");
         }
 
-        [Given(@"I add a new certification details")]
+        [When(@"I add a new certification details")]
         public void GivenIAddANewCertificationDetails()
         {
             profilePageObj.Certifications(driver);
@@ -73,7 +73,7 @@ namespace Project1.StepDefinitions
             Assert.That(newCertification == "CCNA has been added to your certification", "Failed to add certification details");
         }
 
-        [Given(@"I add a new description")]
+        [When(@"I add a new description")]
         public void GivenIAddANewDescription()
         {
             profilePageObj.Description(driver);
