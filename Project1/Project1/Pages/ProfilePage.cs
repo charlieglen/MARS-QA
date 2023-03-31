@@ -41,19 +41,6 @@ namespace Project1.Pages
         //    wait.Until(ExpectedConditions.ElementExists(By.XPath(xpath)));
 
         //}
-
-        //public string GetDescription(IWebDriver driver)
-        //{
-        //    //IWebElement createdDescription = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/div/div/form/div/div/div[2]/div[1]/textarea"));
-        //    //return createdDescription.Text;
-
-        //    //IAlert alert = driver.SwitchTo().Alert();
-        //    //return alert.Text;
-
-        //    //IWebElement confirmationAlert = driver.SwitchTo().ActiveElement();
-        //    //return confirmationAlert.Text;
-
-        //}
         public void Languages(IWebDriver driver)
         {
             
