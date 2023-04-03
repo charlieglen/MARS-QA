@@ -1,23 +1,24 @@
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
-using Project1.Drivers;
 using Project1.Pages;
+using Project1.Utilities;
 using System;
 using TechTalk.SpecFlow;
 using NUnit.Framework;
+using OpenQA.Selenium.Edge;
 
 namespace Project1.StepDefinitions
 {
     [Binding]
-    public class ProfileFeatureStepDefinitions
+    public class ProfileFeatureStepDefinitions : CommonDriver
     {
-        IWebDriver driver = new ChromeDriver();
         LoginPage loginPageObj = new LoginPage();
         ProfilePage profilePageObj = new ProfilePage();
 
-        [Given(@"I launch and log into MarsQA portal")]
+        [Given(@"I launch and log into MarsQA portal successfully")]
         public void GivenILaunchAndLogIntoTradeSkillPortal()
         {
+            driver = new  ChromeDriver();
             loginPageObj.LogInActions(driver);
         }
 
@@ -84,6 +85,12 @@ namespace Project1.StepDefinitions
         {
             string newDescription = profilePageObj.alertWindow(driver);
             Assert.That(newDescription == "Description has been saved successfully", "Failed to save description");
+        }
+
+        [AfterScenario]
+        public void tearDown()
+        {
+            driver.Quit();
         }
 
     }

@@ -10,8 +10,10 @@ namespace Project1.Pages
 {
     public class LoginPage
     {
+        
         public void LogInActions(IWebDriver driver)
         {
+
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("http://localhost:5000/Home");
 
