@@ -36,12 +36,12 @@ namespace Project1.Pages
             IWebElement instituteCountryDropdown = driver.FindElement(By.Name("country"));
             instituteCountryDropdown.Click();
             SelectElement instituteCountry = new SelectElement(instituteCountryDropdown);
-            instituteCountry.SelectByValue("Oman");
+            instituteCountry.SelectByValue("Philippines");
 
             IWebElement titleDropdown = driver.FindElement(By.Name("title"));
             titleDropdown.Click();
             SelectElement title = new SelectElement(titleDropdown);
-            title.SelectByValue("B.A");
+            title.SelectByValue("B.Sc");
 
             IWebElement degreeTextbox = driver.FindElement(By.Name("degree"));
             degreeTextbox.SendKeys("Computer Engineering");
@@ -68,12 +68,12 @@ namespace Project1.Pages
                         
             IWebElement instituteTextbox = driver.FindElement(By.Name("instituteName"));
             instituteTextbox.Clear();
-            instituteTextbox.SendKeys("USM");
+            instituteTextbox.SendKeys("Avengers Academy");
 
             IWebElement instituteCountryDropdown = driver.FindElement(By.Name("country"));
             instituteCountryDropdown.Click();
             SelectElement instituteCountry = new SelectElement(instituteCountryDropdown);
-            instituteCountry.SelectByValue("Oman");
+            instituteCountry.SelectByValue("Bulgaria");
 
             IWebElement titleDropdown = driver.FindElement(By.Name("title"));
             titleDropdown.Click();
@@ -82,7 +82,7 @@ namespace Project1.Pages
 
             IWebElement degreeTextbox = driver.FindElement(By.Name("degree"));
             degreeTextbox.Clear();
-            degreeTextbox.SendKeys("Computer Engineering");
+            degreeTextbox.SendKeys("Intergalactic Space Ambassasdor");
 
             IWebElement yearGraduatedDropdown = driver.FindElement(By.Name("yearOfGraduation"));
             yearGraduatedDropdown.Click();
