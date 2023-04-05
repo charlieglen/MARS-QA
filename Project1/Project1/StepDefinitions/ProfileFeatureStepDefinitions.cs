@@ -10,7 +10,7 @@ using OpenQA.Selenium.Edge;
 namespace Project1.StepDefinitions
 {
     [Binding]
-    public class ProfileFeatureStepDefinitions : CommonDriver
+    public class EducationFeatureStepDefinitions : CommonDriver
     {
         LoginPage loginPageObj = new LoginPage();
         ProfilePage profilePageObj = new ProfilePage();
@@ -22,71 +22,44 @@ namespace Project1.StepDefinitions
             loginPageObj.LogInActions(driver);
         }
 
-        [When(@"I add a new language")]
-        public void GivenIAddANewLanguage()
-        {
-            profilePageObj.Languages(driver);
-        }
-
-        [Then(@"The new language should be added successfully")]
-        public void ThenTheNewLanguageShouldBeAddedSuccessfully()
-        {
-            string newLanguage = profilePageObj.alertWindow(driver);
-            Assert.That(newLanguage == "Filipino has been added to your languages", "Failed to add Language");
-        }
-
-        [When(@"I add a new skill")]
-        public void GivenIAddANewSkill()
-        {
-            profilePageObj.Skills(driver);
-        }
-
-        [Then(@"The new skill should be added successfully")]
-        public void ThenTheNewSkillShouldBeAddedSuccessfully()
-        {
-            string newSkill = profilePageObj.alertWindow(driver);
-            Assert.That(newSkill == "Specflow has been added to your skills", "Failed to add skills");
-        }
-
-        [When(@"I add a new education details")]
+        [When(@"I add a new education record")]
         public void GivenIAddANewEducationDetails()
         {
-            profilePageObj.Education(driver);
+            profilePageObj.addEducation(driver);
         }
 
-        [Then(@"The new education details should be added successfully")]
+        [Then(@"The new education record should be added successfully")]
         public void ThenTheNewEducationDetailsShouldBeAddedSuccessfully()
         {
             string newEducation = profilePageObj.alertWindow(driver);
-            Assert.That(newEducation == "Education has been added", "Failed to add education details");
+            Assert.That(newEducation == "Education has been added", "Failed to add education record");
         }
 
-        [When(@"I add a new certification details")]
-        public void GivenIAddANewCertificationDetails()
+        [When(@"I edit an existing education record")]
+        public void WhenIEditAnExistingEducationRecord()
         {
-            profilePageObj.Certifications(driver);
+            profilePageObj.editEducation(driver);
         }
 
-        [Then(@"The new certification details should be added successfully")]
-        public void ThenTheNewCertificationDetailsShouldBeAddedSuccessfully()
+        [Then(@"The new education record should be updated successfully")]
+        public void ThenTheNewEducationRecordShouldBeUpdatedSuccessfully()
         {
-            string newCertification = profilePageObj.alertWindow(driver);
-            Assert.That(newCertification == "CCNA has been added to your certification", "Failed to add certification details");
+            string updatedEducation = profilePageObj.alertWindow(driver);
+            Assert.That(updatedEducation == "Education as been updated", "Failed to update education record");
         }
-
-        [When(@"I add a new description")]
-        public void GivenIAddANewDescription()
+        [When(@"I delete an existing education record")]
+        public void WhenIDeleteAnExistingEducationRecord()
         {
-            profilePageObj.Description(driver);
+            profilePageObj.deleteEducation(driver);
         }
 
-        [Then(@"The new dedscription should be added successfully")]
-        public void ThenTheNewDedscriptionShouldBeAddedSuccessfully()
+        [Then(@"The new education record should be deleted successfully")]
+        public void ThenTheNewEducationRecordShouldBeDeletedSuccessfully()
         {
-            string newDescription = profilePageObj.alertWindow(driver);
-            Assert.That(newDescription == "Description has been saved successfully", "Failed to save description");
-        }
+            string deleteEducation = profilePageObj.alertWindow(driver);
+            Assert.That(deleteEducation == "Education entry successfully removed", "Failed to delete education record");
 
+        }
         [AfterScenario]
         public void tearDown()
         {

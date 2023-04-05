@@ -17,7 +17,7 @@ namespace Project1.Pages
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("http://localhost:5000/Home");
 
-            IWebElement signinButton = driver.FindElement(By.XPath("//*[@id=\"home\"]/div/div/div[1]/div/a"));
+            IWebElement signinButton = driver.FindElement(By.CssSelector("[class=\"item\"]"));
             signinButton.Click();
 
             IWebElement emailTextbox = driver.FindElement(By.Name("email"));
@@ -29,7 +29,7 @@ namespace Project1.Pages
             IWebElement rememberMeCheckbox = driver.FindElement(By.Name("rememberDetails"));
             rememberMeCheckbox.Click();
 
-            IWebElement loginButton = driver.FindElement(By.XPath("/html/body/div[2]/div/div/div[1]/div/div[4]/button"));
+            IWebElement loginButton = driver.FindElement(By.XPath("//*[contains(text(),'Login')]"));
             loginButton.Click();
 
         }
