@@ -58,8 +58,8 @@ namespace Project1.StepDefinitions
         {
             string deleteEducation = profilePageObj.alertWindow(driver);
             Assert.That(deleteEducation == "Education entry successfully removed", "Failed to delete education record");
-
         }
+
         [AfterScenario]
         public void tearDown()
         {
