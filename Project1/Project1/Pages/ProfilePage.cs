@@ -51,7 +51,7 @@ namespace Project1.Pages
             SelectElement yearGraduated = new SelectElement(yearGraduatedDropdown);
             yearGraduated.SelectByValue("2010");
 
-            IWebElement addEducationButton = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/div/div[3]/div/input[1]"));
+            IWebElement addEducationButton = driver.FindElement(By.XPath("//*[@value='Add']"));
             addEducationButton.Click();
 
         }
@@ -89,7 +89,7 @@ namespace Project1.Pages
             SelectElement yearGraduated = new SelectElement(yearGraduatedDropdown);
             yearGraduated.SelectByValue("2023");
 
-            IWebElement updateEducationButton = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table/tbody/tr/td/div[3]/input[1]"));
+            IWebElement updateEducationButton = driver.FindElement(By.XPath("//*[@value='Update']"));
             updateEducationButton.Click();
 
         }

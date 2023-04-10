@@ -23,21 +23,61 @@ Scenario:  03) Delete education record on my profile
 #	When I add a new language
 #	Then The new language should be added successfully
 #
-#Scenario: 05) Add skills on my profile
+#Scenario: 05) Edit language on my profile
+#	Given I launch and log into MarsQA portal successfully
+#	When I edit the last language added
+#	Then The last language added should be updated successfully
+#
+#Scenario: 06) Delete language on my profile
+#	Given I launch and log into MarsQA portal successfully
+#	When I delete the last language added
+#	Then The last language added should be deleted successfully
+#
+#Scenario: 07) Add skills on my profile
 #	Given I launch and log into MarsQA portal successfully
 #	When I add a new skill
 #	Then The new skill should be added successfully
-
-#Scenario: 06) Add certification details on my profile
+#
+#Scenario: 08) Edit skills on my profile
+#	Given I launch and log into MarsQA portal successfully
+#	When I edit the last skill added
+#	Then The last skill added should be updated successfully
+#
+#Scenario: 09) Delete skills on my profile
+#	Given I launch and log into MarsQA portal successfully
+#	When I delete the last skill added
+#	Then The last skill added should be deleted successfully
+#
+#Scenario: 08) Add certification details on my profile
 #	Given I launch and log into MarsQA portal successfully
 #	When I add a new certification details
 #	Then The new certification details should be added successfully
 #
-#Scenario: 07) Add description on my profile
+#Scenario: 08) Edit certification details on my profile
+#	Given I launch and log into MarsQA portal successfully
+#	When I edit the last certification record
+#	Then The last certification record added should be updated successfully
+#
+#Scenario: 09) Delete certification details on my profile
+#	Given I launch and log into MarsQA portal successfully
+#	When I delete the last certification record
+#	Then The last certification record added should be deleted successfully
+#
+#Scenario: 10) Add description on my profile
 #	Given I launch and log into MarsQA portal successfully
 #	When I add a new description
-#	Then The new dedscription should be added successfully
-
+#	Then The new description should be added successfully
+#
+#Scenario: 11) Edit description on my profile
+#	Given I launch and log into MarsQA portal successfully
+#	When I edit the new description added
+#	Then The new description added should be updated successfully
+#
+#Scenario: 12) Delete description on my profile
+#	Given I launch and log into MarsQA portal successfully
+#	When I delete the new description added
+#	Then The new description added should be deleted successfully
+#
 #Scenario: 08) Add Availability type on my profile
 #	Given I launch and log into MarsQA portal successfully
 #	When I select the availability type 

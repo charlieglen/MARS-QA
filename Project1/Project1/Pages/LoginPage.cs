@@ -10,7 +10,6 @@ namespace Project1.Pages
 {
     public class LoginPage
     {
-        
         public void LogInActions(IWebDriver driver)
         {
 
